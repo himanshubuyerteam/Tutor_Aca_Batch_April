@@ -1,18 +1,26 @@
 package com.myimdb.searchbook.model;
 
-import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Component;
 
 @Component
-@Lazy
 public class Author {
     String name;
-    int age;
-
-
-    public Author()
-    {
-        System.out.println("Bean of Author is Created");
+    String email;
+    public String getName() {
+        return name;
     }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
 
 }
