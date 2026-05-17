@@ -2,8 +2,7 @@ package com.myimdb.searchbook.controller;
 
 
 import com.myimdb.searchbook.model.Book;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.*;
 
@@ -11,13 +10,14 @@ import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 
+@Component
 @RestController
-@RequestMapping("/bc")
-public class BookController {
+@RequestMapping("/ac")
+public class AuthorController {
 
     Map<Integer, Book> bookdb = new HashMap<>();
 
-    public BookController() {
+    public AuthorController() {
         bookdb.put(1,new Book(1,"Crack Interview atFAANG","Richa Tayal",100.0));
         bookdb.put(2,new Book(2,"Head First with Java","Mohan",200.0));
     }
@@ -31,8 +31,6 @@ public class BookController {
     public String getHello()
     {
         System.out.println("Inside Function");
-        Person person = new Person();
-        person.printName();
         return "Hello Guys";
     }
 
@@ -70,4 +68,24 @@ public class BookController {
         bookdb.remove(id);
         return "Book has been deleted";
     }
+
+//    @GetMapping("/getdemo1/{id}/{abc}")
+//    public String demoArg1(@PathVariable String id,@PathVariable String abc)
+//    {
+//        return "id"+id+"abc"+abc;
+//    }
+//
+//    @GetMapping("/getdemo2/{id}/{abc}")
+//    public String demoArg2(@PathVariable String id,@PathVariable String abc)
+//    {
+//        return "id"+id+"abc"+abc;
+//    }
+//
+//    @GetMapping("/getdemo3/{id}/{abc}")
+//    public String demoArg3(@PathVariable String id,@PathVariable String abc)
+//    {
+//        return "id"+id+"abc"+abc;
+//    }
 }
+
+
