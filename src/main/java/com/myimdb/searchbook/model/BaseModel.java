@@ -1,19 +1,18 @@
 package com.myimdb.searchbook.model;
 
-import jakarta.persistence.Entity;
+
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.MappedSuperclass;
 import lombok.Getter;
 import lombok.Setter;
 
-
-@Getter
 @Setter
-@Entity(name = "category_db")
-public class Category  extends  BaseModel{
-
-
-    String name;
-
+@Getter
+@MappedSuperclass
+public class BaseModel {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    Long id;
 }

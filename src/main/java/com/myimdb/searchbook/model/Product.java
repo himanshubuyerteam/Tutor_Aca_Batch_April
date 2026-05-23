@@ -2,13 +2,13 @@ package com.myimdb.searchbook.model;
 
 
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
 
+@Getter
+@Setter
 @Entity(name="product_db")
-public class Product {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Long id;
+public class Product extends BaseModel{
 
     String title;
     String description;
@@ -17,21 +17,4 @@ public class Product {
     @ManyToOne
     Category category;
 
-
-    Long getId()
-    {
-        return id;
-    }
-    String getTitle()
-    {
-        return title;
-    }
-    String getDescription()
-    {
-        return description;
-    }
-    void setDesc(String description)
-    {
-        this.description = description;
-    }
 }
