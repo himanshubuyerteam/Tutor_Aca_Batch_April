@@ -7,9 +7,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class SearchbookApplication {
 
 	public static void main(String[] args) {
-
 		SpringApplication.run(SearchbookApplication.class, args);
-		System.out.println("Starting Searchbook Application");
 	}
-
 }
